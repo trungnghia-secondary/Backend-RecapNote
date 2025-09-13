@@ -1,19 +1,20 @@
 # api_gateway/app.py
 import os
+import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 
 shared_path = os.path.join(parent_dir, 'shared')
-if shared_path not in os.path:
-    os.path.insert(0, shared_path)
+if shared_path not in sys.path:
+    sys.path.insert(0, shared_path)
     
 import uuid
 import time
 from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
-from db import SessionLocal, init_db, Job, JobUpdate
-from b2_utils import upload_to_b2, get_signed_url
+from shared.db import SessionLocal, init_db, Job, JobUpdate
+from shared.b2_utils import upload_to_b2, get_signed_url
 from sqlalchemy import select
 from dotenv import load_dotenv
 
