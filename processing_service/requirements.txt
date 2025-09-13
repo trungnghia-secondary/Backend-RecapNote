@@ -3,7 +3,7 @@ psycopg2-binary==2.9.7
 python-dotenv==1.0.0
 b2sdk==2.1.0
 requests==2.31.0
-faster-whisper==0.9.1
+faster-whisper==0.9.0
 torch>=2.0.0
 torchaudio
 gunicorn
