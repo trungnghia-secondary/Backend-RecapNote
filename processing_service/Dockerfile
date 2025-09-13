@@ -11,8 +11,8 @@ WORKDIR /app
 # Copy requirements và cài đặt
 COPY requirements.txt .
 # Torch bản CPU (Render không có GPU). Nếu GPU thì thay = torch + cuda
-RUN pip install --no-cache-dir -r requirements.txt \
-    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+RUN pip install requirements.txt 
+    && pip install  torch --index-url https://download.pytorch.org/whl/cpu
 
 COPY . .
 
