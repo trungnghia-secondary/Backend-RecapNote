@@ -16,5 +16,7 @@ RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 COPY worker.py /app
 COPY process.py /app
+COPY b2_utils.py /app
+COPY db.py /app
 
 CMD ["python", "process_job", "worker.py"]
