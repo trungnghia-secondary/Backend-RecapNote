@@ -19,4 +19,4 @@ COPY process_job.py /app
 COPY b2_utils.py /app
 COPY db.py /app
 
-CMD ["python", "process_job", "worker.py", "b2_utils.py", "db.py"]
+CMD ["python", "process_job.py", "worker.py", "b2_utils.py", "db.py"]
