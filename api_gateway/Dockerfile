@@ -14,7 +14,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy code
-COPY ./app
+COPY api_gateway/app
+COPY shared/app
 
 # Expose port
 EXPOSE 5000
