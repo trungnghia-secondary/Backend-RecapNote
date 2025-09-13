@@ -15,5 +15,6 @@ RUN pip install -r requirements.txt
 RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 COPY worker.py /app
+COPY process.py /app
 
 CMD ["python", "process_job", "worker.py"]
