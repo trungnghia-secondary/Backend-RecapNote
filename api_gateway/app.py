@@ -13,8 +13,8 @@ import time
 from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
-from shared.db import SessionLocal, init_db, Job, JobUpdate
-from shared.b2_utils import upload_to_b2, get_signed_url
+from db import SessionLocal, init_db, Job, JobUpdate
+from b2_utils import upload_to_b2, get_signed_url
 from sqlalchemy import select
 from dotenv import load_dotenv
 
