@@ -10,8 +10,8 @@ if shared_path not in sys.path:
 import tempfile
 import time
 import traceback
-from db import SessionLocal, Job, JobUpdate
-from b2_utils import download_from_b2_to, upload_to_b2, get_signed_url
+from shared.db import SessionLocal, Job, JobUpdate
+from shared.b2_utils import download_from_b2_to, upload_to_b2, get_signed_url
 from dotenv import load_dotenv
 load_dotenv()
 import requests
