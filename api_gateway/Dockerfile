@@ -15,7 +15,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy code
 COPY Backend-RecapNote/api_gateway/ app
-COPY Backend-RecapNote/shared/ app
 
 # Expose port
 EXPOSE 5000
