@@ -103,7 +103,7 @@ def status(job_id):
     job = db.query(Job).filter(Job.id == job_id).first()
     db.close()
     if not job:
-        return jsonify({"error": "job not found"}), 404
+        return jsonify({"error": "Not found"}), 404
     return jsonify({
         "job_id": job.id,
         "status": job.status,
