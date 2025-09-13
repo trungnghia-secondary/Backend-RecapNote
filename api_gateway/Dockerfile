@@ -15,9 +15,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy code
 COPY app.py /app
+COPY b2_utils.py /app
+COPY db.py /app
 
 # Expose port
 EXPOSE 5000
 
 # Chạy bằng gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "b2_utils.py", "db.py"]
