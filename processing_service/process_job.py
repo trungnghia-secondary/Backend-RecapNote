@@ -1,12 +1,12 @@
 # processing_service/process_job.py
 import os
 import sys
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
+#current_dir = os.path.dirname(os.path.abspath(__file__))
+#parent_dir = os.path.dirname(current_dir)
 
-shared_path = os.path.join(parent_dir, '/app/shared')
-if shared_path not in sys.path:
-    sys.path.insert(0, shared_path)
+#shared_path = os.path.join(parent_dir, '/app/shared')
+#if shared_path not in sys.path:
+    #sys.path.insert(0, shared_path)
     
 import tempfile
 import time
