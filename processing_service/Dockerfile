@@ -14,7 +14,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt 
 RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 RUN pip install ctranslate2 --no-cache-dir --force-reinstall
-RUN pip install --force-reinstall --no-deps ctranslate2==<version> --index-url https://pypi.org/simple/ctranslate2/
 
 COPY worker.py /app
 COPY process_job.py /app
