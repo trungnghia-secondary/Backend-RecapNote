@@ -1,10 +1,15 @@
 # processing_service/process_job.py
 import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+
+shared_path = os.path.join(parent_dir, 'shared')
+
 import tempfile
 import time
 import traceback
-from shared.db import SessionLocal, Job, JobUpdate
-from shared.b2_utils import download_from_b2_to, upload_to_b2, get_signed_url
+from db import SessionLocal, Job, JobUpdate
+from b2_utils import download_from_b2_to, upload_to_b2, get_signed_url
 from dotenv import load_dotenv
 load_dotenv()
 import requests
