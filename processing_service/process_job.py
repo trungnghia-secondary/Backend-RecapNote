@@ -37,6 +37,14 @@ PHO_MODEL = os.getenv("PHO_MODEL", "vinai/PhoWhisper-small")
 PHO_DEVICE = os.getenv("PHO_DEVICE", "cpu")  # 'cuda' or 'cpu'
 _compute_type = "float16" if PHO_DEVICE == "cuda" else "int8_float16"
 
+# Đảm bảo thư mục cache tồn tại
+cache_dir = os.path.join(os.path.expanduser("~"), ".cache", "huggingface", "hub")
+os.makedirs(cache_dir, exist_ok=True)
+
+# Tải mô hình
+from huggingface_hub import hf_hub_download
+hf_hub_download(repo_id=PHO_MODEL, filename="model.bin")
+
 print("Loading PhoWhisper model:", PHO_MODEL, "device:", PHO_DEVICE)
 model = WhisperModel(PHO_MODEL, device=PHO_DEVICE, compute_type=_compute_type)
 
