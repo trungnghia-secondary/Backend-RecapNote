@@ -20,4 +20,4 @@ COPY db.py /app
 
 EXPOSE 8000
 
-CMD ["python", "0.0.0.0:8000", "process_job.py", "worker.py", "b2_utils.py", "db.py"]
+CMD ["python", "process_job.py", "worker.py", "b2_utils.py", "db.py"]
